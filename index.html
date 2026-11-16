@@ -1,0 +1,902 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>LaKeDada Bar · Tapas y vermut en Mota del Cuervo</title>
+<meta name="description" content="Más que una tapa, un punto de encuentro. Tapas de las de siempre, vermut y buena compañía en la Plaza de la Tercia, 3, Mota del Cuervo.">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#f6efe4">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Kaushan+Script&display=swap" rel="stylesheet">
+<style>
+html,body{background:#f6efe4}
+:root{
+  --bg:#f6efe4; --ink:#1f1512; --ink-2:#5c4a42; --dark:#1c1210; --red:#c8102e; --red-2:#9b0c22;
+  --pill:#ece1d2; --line:rgba(31,21,18,.09); --glass:rgba(250,245,238,.58); --glass-b:rgba(255,255,255,.6);
+  --r-xl:34px; --ease:cubic-bezier(.22,1,.36,1); --ease-io:cubic-bezier(.65,0,.35,1);
+  --script:"Kaushan Script",cursive;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--ink);font-family:"Inter Tight",system-ui,sans-serif;font-weight:400;line-height:1.5;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+img,video{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+button,input{font:inherit}
+:focus-visible{outline:2px solid var(--red);outline-offset:3px;border-radius:8px}
+.wrap{width:100%;max-width:1440px;margin:0 auto;padding:0 24px}
+
+/* ---------- animation + headings (from Velia) ---------- */
+.js .rv{opacity:0;transform:translate3d(0,28px,0);filter:blur(8px)}
+.rv{transition:opacity 1.1s var(--ease),transform 1.1s var(--ease),filter 1.1s var(--ease);transition-delay:calc(var(--d,0) * 90ms + var(--base,0ms))}
+.js .rv-scale{transform:scale(.96) translateY(24px)}
+.js .rv.in{opacity:1;transform:none;filter:none}
+.split .w{display:inline-block;overflow:hidden;vertical-align:top;padding:0 .02em .12em;margin:0 -.02em -.12em}
+.split .w>span{display:inline-block;will-change:transform}
+.js .split .w>span{transform:translateY(110%) rotate(4deg);opacity:0;transition:transform 1.2s var(--ease),opacity 1.2s var(--ease);transition-delay:calc(var(--i) * 70ms + var(--base,0ms))}
+.js .split.in .w>span{transform:none;opacity:1}
+
+.h-display{font-weight:400;font-size:clamp(46px,7.2vw,108px);line-height:.96;letter-spacing:-.045em;color:#2a1a15}
+.h-display .w>span{background:linear-gradient(180deg,#2a1a15 0%,#6a4d42 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent}
+.h-display .red .w>span{background:linear-gradient(180deg,#d4142f 0%,#8f0b20 100%);-webkit-background-clip:text;background-clip:text}
+.h2{font-weight:400;font-size:clamp(34px,4.4vw,62px);line-height:1.02;letter-spacing:-.04em;margin-top:18px;color:var(--ink)}
+.h2 .lt{color:#8f7c70;font-weight:300}
+.cta h2{font-weight:400;font-size:clamp(60px,9vw,136px);line-height:.9;letter-spacing:-.055em;color:#fff}
+.script{font-family:var(--script);color:var(--red);font-weight:400;letter-spacing:0}
+
+html.lenis,html.lenis body{height:auto}
+.lenis.lenis-smooth{scroll-behavior:auto!important}
+.lenis.lenis-stopped{overflow:hidden}
+
+.media{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.media.kb{animation:kb 26s var(--ease-io) infinite alternate}
+@keyframes kb{from{transform:scale(1.04)}to{transform:scale(1.14) translate3d(-1.5%,-1%,0)}}
+
+.ai-t{display:grid}
+.ai-t>span{grid-area:1/1}
+.ai-t .ghost{visibility:hidden}
+
+/* ---------- wordmark ---------- */
+.wordmark{font-family:var(--script);font-size:30px;line-height:1;letter-spacing:-.01em;color:var(--ink);display:inline-flex;align-items:baseline;white-space:nowrap}
+.wordmark .k,.wordmark .d{color:var(--red);font-family:Georgia,"Times New Roman",serif;font-weight:700;font-size:1.02em;letter-spacing:-.02em;margin:0 .01em}
+.wordmark .d{display:inline-block;transform:scaleX(-1)}
+.wordmark small{font-family:"Inter Tight",sans-serif;font-size:11px;letter-spacing:.32em;margin-left:6px;color:var(--ink-2);transform:translateY(-4px)}
+
+/* ---------- nav ---------- */
+.nav{position:fixed;inset:0 0 auto 0;z-index:50;padding:16px 0;transition:background .5s var(--ease),padding .5s var(--ease),box-shadow .5s var(--ease)}
+.nav.scrolled{background:rgba(246,239,228,.74);backdrop-filter:blur(18px) saturate(140%);-webkit-backdrop-filter:blur(18px) saturate(140%);padding:10px 0;box-shadow:0 1px 0 var(--line)}
+.nav .wrap{display:grid;grid-template-columns:1fr auto 1fr;align-items:center}
+.nav-l{display:flex;gap:10px}
+.pill{background:var(--pill);border-radius:999px;padding:10px 22px;font-size:13px;text-transform:uppercase;letter-spacing:.04em;transition:background .4s var(--ease),transform .4s var(--ease)}
+.pill:hover{background:#e2d3bf;transform:translateY(-1px)}
+.logo{display:grid;place-items:center;padding:4px 8px;transition:transform .8s var(--ease)}
+.logo:hover{transform:rotate(-3deg) scale(1.04)}
+.nav-r{display:flex;justify-content:flex-end;align-items:center;gap:18px}
+.status{display:inline-flex;align-items:center;gap:8px;font-size:12.5px;color:var(--ink-2);white-space:nowrap}
+.status i{width:8px;height:8px;border-radius:50%;background:#a99a8f;box-shadow:0 0 0 4px rgba(169,154,143,.18)}
+.status.open i{background:#3f9d5a;box-shadow:0 0 0 4px rgba(63,157,90,.18);animation:pulse 2.4s ease-in-out infinite}
+@keyframes pulse{50%{box-shadow:0 0 0 7px rgba(63,157,90,.05)}}
+.btn-dark{display:inline-flex;align-items:center;gap:8px;background:var(--dark);color:#f6ede2;border-radius:999px;padding:11px 24px;font-size:13px;text-transform:uppercase;letter-spacing:.05em;border:0;cursor:pointer;position:relative;overflow:hidden;isolation:isolate;transition:transform .5s var(--ease),box-shadow .5s var(--ease),background .5s;white-space:nowrap}
+.btn-dark::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(120deg,transparent 30%,rgba(255,255,255,.22) 50%,transparent 70%);transform:translateX(-120%);transition:transform .9s var(--ease)}
+.btn-dark:hover{transform:translateY(-2px);box-shadow:0 12px 28px -12px rgba(28,18,16,.6)}
+.btn-dark:hover::before{transform:translateX(120%)}
+.btn-red{background:var(--red)}
+.btn-red:hover{box-shadow:0 12px 28px -12px rgba(200,16,46,.7)}
+.btn-dark svg{width:15px;height:15px;flex:none}
+.burger{display:none;width:42px;height:42px;border-radius:50%;background:var(--pill);border:0;flex-direction:column;align-items:center;justify-content:center;gap:5px;cursor:pointer}
+.burger i{display:block;width:16px;height:1.5px;background:var(--ink);transition:transform .5s var(--ease)}
+body.menu-open .burger i:first-child{transform:translateY(3.25px) rotate(45deg)}
+body.menu-open .burger i:last-child{transform:translateY(-3.25px) rotate(-45deg)}
+.mmenu{position:fixed;inset:0;z-index:40;background:rgba(246,239,228,.96);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:18px;opacity:0;pointer-events:none;transition:opacity .5s var(--ease)}
+.mmenu a{font-size:34px;letter-spacing:-.03em;opacity:0;transform:translateY(16px);transition:opacity .6s var(--ease),transform .6s var(--ease)}
+.mmenu a.script{font-size:38px}
+body.menu-open .mmenu{opacity:1;pointer-events:auto}
+body.menu-open .mmenu a{opacity:1;transform:none}
+body.menu-open .mmenu a:nth-child(2){transition-delay:.06s}
+body.menu-open .mmenu a:nth-child(3){transition-delay:.12s}
+body.menu-open .mmenu a:nth-child(4){transition-delay:.18s}
+
+/* ---------- hero ---------- */
+.hero{padding-top:118px}
+.hero-head{text-align:center;padding:0 16px}
+.hero-sub{font-style:italic;font-size:clamp(16px,1.5vw,20px);color:var(--ink-2);margin-top:22px}
+.hero-sub b{font-style:normal;font-weight:500;color:var(--ink)}
+.hero-card{position:relative;margin-top:34px;border-radius:var(--r-xl);overflow:hidden;height:clamp(680px,45.5vw,860px);background:#2a1a12;box-shadow:0 40px 80px -50px rgba(40,18,10,.55)}
+.hero-card .shade{position:absolute;inset:0;background:radial-gradient(60% 70% at 50% 55%,rgba(20,10,6,.05),rgba(20,10,6,.45) 100%)}
+.hero-tag{position:absolute;left:28px;bottom:24px;z-index:2;color:#fff;font-family:var(--script);font-size:clamp(22px,2vw,30px);text-shadow:0 2px 18px rgba(0,0,0,.5)}
+.hero-tag span{color:#ff4b5e}
+.studio{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:min(920px,74%);display:grid;grid-template-columns:1.7fr 1fr;border-radius:26px;background:rgba(244,237,228,.66);backdrop-filter:blur(26px) saturate(130%);-webkit-backdrop-filter:blur(26px) saturate(130%);border:1px solid rgba(255,255,255,.55);box-shadow:0 30px 60px -30px rgba(20,10,5,.5),inset 0 1px 0 rgba(255,255,255,.6);overflow:hidden;z-index:1}
+.chat{padding:22px 24px;display:flex;flex-direction:column;gap:12px}
+.chat-top{display:flex;align-items:center;gap:10px;font-size:12px;text-transform:uppercase;letter-spacing:.08em;color:#3f2f28}
+.chat-top .av{width:26px;height:26px;border-radius:50%;background:var(--dark);display:grid;place-items:center;flex:none}
+.chat-top .av b{font-family:var(--script);font-weight:400;color:var(--red);font-size:15px;line-height:1;text-transform:none}
+.chat-top em{font-style:normal;text-transform:none;letter-spacing:0;color:#6d5a50;margin-left:auto;font-size:11.5px}
+.bubble{align-self:flex-end;max-width:72%;background:var(--red);color:#fff;border-radius:16px 16px 4px 16px;padding:10px 14px;font-size:12.5px;line-height:1.4;box-shadow:0 6px 18px -10px rgba(120,10,25,.5)}
+.ai{display:flex;gap:8px;max-width:82%;font-size:12.5px;line-height:1.5;color:#33241e}
+.ai-ic{width:22px;height:22px;border-radius:50%;background:var(--dark);display:grid;place-items:center;flex:none;margin-top:2px}
+.ai-ic b{font-family:var(--script);font-weight:400;color:var(--red);font-size:13px;line-height:1}
+.ai .ai-t{background:rgba(255,253,249,.88);border-radius:16px 16px 16px 4px;padding:10px 14px;box-shadow:0 6px 18px -10px rgba(40,20,10,.25)}
+.msg{opacity:0;transform:translateY(12px) scale(.98);transition:opacity .8s var(--ease),transform .8s var(--ease)}
+.msg.show{opacity:1;transform:none}
+.typing{display:inline-flex;gap:4px;padding:6px 0;align-self:start}
+.typing i{width:5px;height:5px;border-radius:50%;background:#7a675b;animation:dot 1.2s infinite ease-in-out}
+.typing i:nth-child(2){animation-delay:.15s}.typing i:nth-child(3){animation-delay:.3s}
+@keyframes dot{0%,80%,100%{opacity:.25;transform:none}40%{opacity:1;transform:translateY(-3px)}}
+.cd{margin-top:auto;display:flex;justify-content:space-between;align-items:flex-end;gap:20px;padding-top:6px}
+.cd small{display:block;font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:#5f4e43}
+.cd strong{display:block;font-weight:400;font-size:clamp(18px,1.7vw,24px);letter-spacing:-.02em;margin-top:2px}
+.slider{width:44%;min-width:120px;text-align:right}
+.slider small{font-size:11.5px;text-transform:none;letter-spacing:0}
+.track{position:relative;height:8px;border-radius:99px;background:rgba(255,255,255,.55);margin-top:8px}
+.track b{position:absolute;left:0;top:0;bottom:0;width:0;border-radius:99px;background:linear-gradient(90deg,#e25a6c,var(--red));transition:width 1.8s var(--ease)}
+.track b::after{content:"";position:absolute;right:-9px;top:50%;width:18px;height:18px;margin-top:-9px;border-radius:50%;background:#fff;border:2px solid var(--red);box-shadow:0 4px 10px rgba(0,0,0,.15)}
+.prod{padding:14px;border-left:1px solid rgba(255,255,255,.45);display:flex;flex-direction:column;gap:10px}
+.prod>span{font-size:12.5px;color:#3f2f28}
+#hero-fig{position:relative;flex:1;border-radius:14px;overflow:hidden;min-height:240px}
+#hero-fig img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transform:scale(1.15);transition:transform 2.4s var(--ease)}
+#hero-fig.in img{transform:scale(1)}
+#hero-fig::after{content:"";position:absolute;inset:0;background:linear-gradient(110deg,transparent 40%,rgba(255,255,255,.45) 50%,transparent 60%);transform:translateX(-100%)}
+#hero-fig.in::after{animation:sheen 1.6s var(--ease) 1.4s forwards}
+@keyframes sheen{to{transform:translateX(100%)}}
+#hero-fig figcaption{position:absolute;left:10px;bottom:10px;right:10px;display:flex;justify-content:space-between;align-items:center;background:rgba(255,253,249,.86);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-radius:10px;padding:7px 10px;font-size:11.5px;color:#33241e}
+#hero-fig figcaption b{font-weight:500;color:var(--red)}
+
+/* ---------- section heads ---------- */
+.sec-head{text-align:center;position:relative}
+.eyebrow{display:inline-block;font-size:11px;text-transform:uppercase;letter-spacing:.14em;background:rgba(255,255,255,.65);border:1px solid rgba(255,255,255,.85);padding:6px 12px;border-radius:999px;backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);color:var(--ink-2)}
+.lead{max-width:470px;margin:16px auto 0;font-size:14px;color:var(--ink-2);line-height:1.55}
+
+/* ---------- bento ---------- */
+.s-bento{padding-top:120px}
+.bento-shell{position:relative;border-radius:var(--r-xl);overflow:hidden;padding:72px 40px 40px;isolation:isolate;background:linear-gradient(180deg,#efe2cf 0%,#f3e9dc 45%,#ead7c4 100%)}
+.bento-shell::before{content:"";position:absolute;z-index:-1;width:900px;height:900px;left:50%;top:-420px;transform:translateX(-50%);background:radial-gradient(circle,rgba(255,236,206,.95),transparent 62%);pointer-events:none}
+.bento-shell::after{content:"";position:absolute;z-index:-1;width:520px;height:520px;right:-160px;bottom:-200px;background:radial-gradient(circle,rgba(200,16,46,.14),transparent 65%);pointer-events:none}
+.bento{margin-top:48px;display:grid;grid-template-columns:1.25fr 1fr 1fr;gap:14px}
+.card{position:relative;border-radius:24px;overflow:hidden;background:var(--glass);backdrop-filter:blur(22px) saturate(130%);-webkit-backdrop-filter:blur(22px) saturate(130%);border:1px solid var(--glass-b);box-shadow:inset 0 1px 0 rgba(255,255,255,.6),0 20px 40px -30px rgba(40,30,20,.35);transition:transform .7s var(--ease),box-shadow .7s var(--ease)}
+.card:hover{transform:translateY(-6px);box-shadow:inset 0 1px 0 rgba(255,255,255,.6),0 30px 60px -30px rgba(40,30,20,.45)}
+.card h4{font-size:16px;font-weight:400;letter-spacing:-.01em}
+.card p{font-size:12.5px;line-height:1.5;color:var(--ink-2);margin-top:6px}
+.c-pad{padding:14px;display:flex;flex-direction:column;min-height:272px}
+.txt{padding:14px 6px 4px}
+.c-big{grid-row:span 2;min-height:560px;padding:28px;color:#fff;display:flex;flex-direction:column;justify-content:space-between;background:transparent;border-color:rgba(255,255,255,.3);isolation:isolate}
+.c-big>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2;transition:transform 1.6s var(--ease)}
+.c-big:hover>img{transform:scale(1.05)}
+.c-big::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(28,14,10,.82) 0%,rgba(28,14,10,.55) 30%,rgba(28,14,10,0) 48%,rgba(28,14,10,.08) 60%,rgba(20,10,6,.78) 100%)}
+.c-big h3{font-size:clamp(28px,2.6vw,38px);font-weight:400;line-height:1.05;letter-spacing:-.035em}
+.c-big h3 span{opacity:.72}
+.c-big .desc{font-size:12.5px;opacity:.88;max-width:310px;margin-top:12px;color:#fff}
+.avatars{display:flex;align-items:center;gap:10px;font-size:11.5px}
+.avatars .row-av{display:flex}
+.avatars img{width:30px;height:30px;border-radius:50%;border:2px solid #fff;object-fit:cover;margin-left:-8px}
+.avatars img:first-child{margin-left:0}
+.btn-white{display:flex;align-items:center;justify-content:center;gap:8px;background:#fff;color:var(--ink);border-radius:999px;padding:12px;font-size:13px;margin-top:14px;transition:transform .5s var(--ease)}
+.btn-white:hover{transform:translateY(-2px)}
+.btn-white svg{width:15px;height:15px}
+.collage{flex:1;display:grid;grid-template-columns:1fr 1fr;gap:6px;min-height:140px;border-radius:16px;overflow:hidden}
+.collage img{width:100%;height:100%;object-fit:cover;border-radius:12px;transition:transform 1.6s var(--ease)}
+.card:hover .collage img{transform:scale(1.05)}
+.gauge{position:relative;flex:1;display:grid;place-items:center;min-height:150px}
+.gauge .val{position:absolute;top:50%;left:50%;transform:translate(-50%,-20%);font-size:30px;letter-spacing:-.03em;white-space:nowrap}
+.gauge .val small{font-size:15px;color:var(--ink-2);margin-left:4px}
+.gauge .ends{position:absolute;bottom:6px;left:12px;right:12px;display:flex;justify-content:space-between;font-size:11px;color:#665548}
+.rows{flex:1;display:flex;flex-direction:column;gap:6px;padding:6px}
+.row{display:flex;align-items:center;gap:10px;background:rgba(255,255,255,.66);border-radius:12px;padding:8px;font-size:11.5px;opacity:0;transform:translateX(-14px);transition:opacity .8s var(--ease),transform .8s var(--ease);transition-delay:calc(var(--i) * 140ms + 400ms)}
+.in .row{opacity:1;transform:none}
+.row img{width:34px;height:34px;border-radius:8px;object-fit:cover;flex:none}
+.row b{display:block;font-size:12px;font-weight:500}
+.row em{font-style:normal;font-size:11px;color:#6b5a4f}
+.row .ok{margin-left:auto;width:18px;height:18px;border-radius:50%;background:var(--red);display:grid;place-items:center;flex:none}
+.row .ok svg{width:9px;height:9px}
+.insight{position:relative;flex:1;border-radius:16px;overflow:hidden;min-height:150px}
+.insight img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 30%;transition:transform 1.6s var(--ease)}
+.card:hover .insight img{transform:scale(1.06)}
+.chip{position:absolute;top:10px;right:10px;background:rgba(255,255,255,.85);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-radius:12px;padding:8px 10px;font-size:11px;display:flex;align-items:center;gap:8px;box-shadow:0 8px 20px -10px rgba(0,0,0,.3);animation:float 6s ease-in-out infinite}
+.chip i{width:8px;height:8px;border-radius:50%;background:var(--red);box-shadow:0 0 0 4px rgba(200,16,46,.18)}
+@keyframes float{50%{transform:translateY(-6px)}}
+
+/* ---------- carta ---------- */
+.s-prod{padding-top:120px}
+.prod-shell{position:relative;border-radius:var(--r-xl);overflow:hidden;padding:72px 40px 0;background:linear-gradient(180deg,#f3e9db 0%,#efe2d0 30%,#4a2420 74%,#1c1210 100%)}
+.prod-shell::before{content:"";position:absolute;width:700px;height:700px;left:50%;transform:translateX(-50%);top:30%;border-radius:50%;background:radial-gradient(circle,rgba(255,210,170,.65),transparent 65%);filter:blur(10px);pointer-events:none}
+.stage{position:relative;margin-top:30px;display:grid;grid-template-columns:1fr 1.05fr 1fr;align-items:end;gap:20px}
+.stage .col{display:flex;flex-direction:column;gap:14px;padding-bottom:48px}
+.g-card{background:rgba(255,255,255,.66);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border:1px solid rgba(255,255,255,.85);border-radius:20px;padding:16px;box-shadow:0 20px 40px -30px rgba(40,30,20,.45);transition:transform .6s var(--ease)}
+.g-card:hover{transform:translateY(-4px)}
+.lbl{font-size:11px;text-transform:uppercase;letter-spacing:.12em;color:#6b5a4f}
+.g-card h5{font-size:17px;font-weight:400;letter-spacing:-.01em}
+.g-card em{font-style:normal;font-size:11.5px;color:#6b5a4f}
+.thumbs{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin-top:12px}
+.thumbs img{width:100%;aspect-ratio:1;object-fit:cover;border-radius:10px}
+.g-foot{display:flex;justify-content:space-between;align-items:center;margin-top:12px;font-size:12px;color:var(--ink-2)}
+.g-foot a{width:24px;height:24px;border-radius:50%;background:var(--red);display:grid;place-items:center;transition:transform .5s var(--ease)}
+.g-foot a:hover{transform:translateX(3px)}
+.g-foot svg{width:11px;height:11px}
+.build ul,.checks{list-style:none}
+.build ul{margin-top:12px;display:flex;flex-direction:column;gap:9px}
+.build li{display:flex;justify-content:space-between;gap:12px;font-size:12px}
+.build li span{color:var(--ink-2)}
+.build li b{font-weight:400;color:var(--ink);white-space:nowrap}
+.build .note{display:block;font-size:11px;color:var(--red);margin-top:-5px}
+.hand{position:relative;align-self:end;height:640px;border-radius:24px 24px 0 0;overflow:hidden;-webkit-mask-image:linear-gradient(180deg,transparent 0%,#000 14%,#000 100%);mask-image:linear-gradient(180deg,transparent 0%,#000 14%,#000 100%)}
+#hand-img{position:absolute;left:0;top:0;width:100%;height:115%;object-fit:cover;object-position:50% 30%;will-change:transform}
+.hero-vis{display:flex;gap:12px;margin-top:12px}
+.hero-vis img{width:84px;height:104px;border-radius:12px;object-fit:cover;flex:none}
+.checks{margin-top:8px;display:flex;flex-direction:column;gap:5px;font-size:12px;color:var(--ink-2)}
+.checks li{display:flex;align-items:center;gap:7px}
+.checks li::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--red);flex:none}
+.view{display:flex;justify-content:space-between;align-items:center;border-top:1px solid var(--line);margin-top:14px;padding-top:12px;font-size:12.5px}
+.view svg{width:14px;height:14px;transition:transform .5s var(--ease)}
+.view:hover svg{transform:translateX(4px)}
+.match-row{display:flex;gap:10px;align-items:center;margin-top:12px}
+.ring{position:relative;width:62px;height:62px;flex:none}
+.ring span{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:13px;white-space:nowrap}
+.match-row img{width:100%;height:96px;object-fit:cover;border-radius:12px;min-width:0}
+
+/* full menu */
+.menu-full{position:relative;margin-top:-1px;background:var(--dark);border-radius:0 0 var(--r-xl) var(--r-xl);padding:80px 40px 56px;color:#f3e7da}
+.menu-head{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;flex-wrap:wrap}
+.menu-head h3{font-weight:400;font-size:clamp(32px,3.6vw,52px);letter-spacing:-.04em;line-height:1}
+.menu-head h3 .script{font-size:.9em;margin-left:.15em}
+.menu-head p{max-width:360px;font-size:13px;color:#b9a79b}
+.tabs{display:flex;flex-wrap:wrap;gap:8px;margin-top:32px}
+.tab{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);color:#e9dccf;border-radius:999px;padding:9px 16px;font-size:12.5px;cursor:pointer;transition:background .4s var(--ease),color .4s,border-color .4s}
+.tab:hover{background:rgba(255,255,255,.12)}
+.tab[aria-selected="true"]{background:var(--red);border-color:var(--red);color:#fff}
+.menu-grid{margin-top:34px;display:grid;grid-template-columns:repeat(3,1fr);gap:16px 40px}
+.mcat{break-inside:avoid;padding:22px 0;border-top:1px solid rgba(255,255,255,.1);transition:opacity .5s var(--ease),transform .5s var(--ease)}
+.mcat.hide{display:none}
+.mcat h4{font-weight:400;font-size:22px;letter-spacing:-.02em;display:flex;align-items:baseline;gap:10px}
+.mcat h4 .script{font-size:20px}
+.mcat ul{list-style:none;margin-top:14px;display:flex;flex-direction:column;gap:11px}
+.mcat li{display:flex;align-items:baseline;gap:8px;font-size:14px}
+.mcat li .n{color:#f3e7da}
+.mcat li .n small{display:block;font-size:11.5px;color:#e2677a;margin-top:1px}
+.mcat li .dots{flex:1;border-bottom:1px dotted rgba(255,255,255,.22);transform:translateY(-4px);min-width:16px}
+.mcat li .p{font-variant-numeric:tabular-nums;color:#fff;white-space:nowrap}
+.mcat .sub{font-size:12px;color:#b9a79b;margin-top:6px;line-height:1.6}
+.supl{margin-top:30px;padding-top:20px;border-top:1px solid rgba(255,255,255,.1);font-size:12.5px;color:#b9a79b;display:flex;flex-wrap:wrap;gap:6px 22px}
+.supl b{font-weight:500;color:#f3e7da}
+
+/* ---------- CTA + footer ---------- */
+.s-foot{padding-top:120px}
+.cta{position:relative;border-radius:var(--r-xl);overflow:hidden;min-height:520px;padding:56px;display:grid;grid-template-columns:1.2fr .8fr;gap:40px;align-items:end;isolation:isolate;background:#1c1210}
+.cta .media{z-index:-2}
+.cta::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,rgba(20,10,8,.86) 0%,rgba(20,10,8,.55) 45%,rgba(20,10,8,.25) 100%)}
+.cta h2 .script{font-size:.62em;display:inline-block;transform:translateY(-.2em)}
+.cta p{max-width:380px;margin-top:20px;font-size:14.5px;color:#eadbcd}
+.cta .acts{display:flex;flex-wrap:wrap;gap:10px;margin-top:24px}
+.btn-ghost{display:inline-flex;align-items:center;gap:8px;border-radius:999px;padding:11px 22px;font-size:13px;text-transform:uppercase;letter-spacing:.05em;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.35);color:#fff;backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);transition:background .4s var(--ease),transform .5s var(--ease)}
+.btn-ghost:hover{background:rgba(255,255,255,.22);transform:translateY(-2px)}
+.btn-ghost svg{width:15px;height:15px}
+.hours{background:rgba(250,245,238,.9);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);border:1px solid rgba(255,255,255,.8);border-radius:22px;padding:22px 22px 18px;color:var(--ink);box-shadow:0 30px 60px -30px rgba(0,0,0,.6)}
+.hours-top{display:flex;justify-content:space-between;align-items:center;gap:10px}
+.hours h3{font-weight:400;font-size:20px;letter-spacing:-.02em}
+.hours ul{list-style:none;margin-top:14px;display:flex;flex-direction:column}
+.hours li{display:flex;justify-content:space-between;font-size:13.5px;padding:8px 10px;border-radius:10px}
+.hours li span:last-child{font-variant-numeric:tabular-nums}
+.hours li.off span:last-child{color:var(--red)}
+.hours li.today{background:var(--dark);color:#fff}
+.hours li.today.off span:last-child{color:#ff6b7d}
+.hours .fest{font-size:12.5px;color:var(--ink-2);margin-top:10px;padding:0 10px}
+
+.foot{padding:72px 0 28px}
+.foot-grid{display:grid;grid-template-columns:1.6fr repeat(3,1fr) auto;gap:32px}
+.foot h6{font-size:13px;font-weight:500;margin-bottom:16px}
+.about p{font-size:13px;color:#5f4e43;max-width:300px}
+.socials{display:flex;gap:10px;margin-top:24px}
+.socials a{width:36px;height:36px;border-radius:50%;background:var(--pill);display:grid;place-items:center;transition:background .4s,transform .5s var(--ease)}
+.socials a:hover{background:#e2d3bf;transform:translateY(-3px)}
+.socials svg{width:15px;height:15px}
+.foot ul{list-style:none;display:flex;flex-direction:column;gap:10px}
+.foot li,.foot li a{font-size:13px;color:#5f4e43}
+.foot li a{position:relative}
+.foot li a::after{content:"";position:absolute;left:0;right:0;bottom:-2px;height:1px;background:currentColor;transform:scaleX(0);transform-origin:right;transition:transform .5s var(--ease)}
+.foot li a:hover{color:var(--ink)}
+.foot li a:hover::after{transform:scaleX(1);transform-origin:left}
+.foot .mark .wordmark{font-size:34px}
+.legal{display:flex;justify-content:space-between;gap:16px;margin-top:64px;padding-top:22px;border-top:1px solid var(--line);font-size:12px;color:#6b5a4f}
+
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition-duration:.01ms!important;transition-delay:0ms!important}
+  .js .rv,.js .split .w>span,.msg,.row{opacity:1!important;transform:none!important;filter:none!important}
+}
+
+/* ---------- responsive ---------- */
+@media (max-width:1100px){
+  .studio{width:90%}
+  .hero-card{height:720px}
+  .bento{grid-template-columns:1fr 1fr}
+  .c-big{grid-row:auto;grid-column:span 2;min-height:480px}
+  .stage{grid-template-columns:1fr 1fr}
+  .hand{grid-column:span 2;order:-1;height:520px;max-width:520px;width:100%;justify-self:center}
+  .stage .col{padding-bottom:0}
+  .stage .col:last-child{padding-bottom:40px}
+  .menu-grid{grid-template-columns:1fr 1fr}
+  .cta{grid-template-columns:1fr}
+  .foot-grid{grid-template-columns:repeat(3,1fr)}
+  .foot .about{grid-column:span 3}
+}
+@media (max-width:860px){
+  .nav-l,.status-nav{display:none}
+  .burger{display:flex}
+  .nav .wrap{grid-template-columns:auto 1fr auto}
+  .logo{order:-1}
+  .nav-r{gap:10px}
+  .hero-card{height:auto;padding:120px 14px 14px}
+  .studio{position:relative;left:auto;top:auto;transform:none;width:100%;grid-template-columns:1fr}
+  .prod{border-left:0;border-top:1px solid rgba(255,255,255,.45);padding:14px}
+  #hero-fig{flex:none;min-height:0;aspect-ratio:16/10}
+  #hero-fig img{object-position:50% 40%}
+  .hero-tag{top:28px;bottom:auto;left:22px}
+}
+@media (max-width:640px){
+  .wrap{padding:0 16px}
+  .btn-dark{padding:10px 16px;font-size:12px}
+  .wordmark{font-size:26px}
+  .hero{padding-top:96px}
+  .h-display{font-size:clamp(34px,10.4vw,46px)}
+  .hero-card{border-radius:24px;padding:84px 10px 10px}
+  .studio{border-radius:20px}
+  .chat{padding:18px 16px;gap:10px}
+  .bubble,.ai{max-width:92%;font-size:12px}
+  .cd strong{font-size:20px}
+  .prod{padding:12px 16px 16px}
+  #hero-fig{aspect-ratio:4/3}
+  .cd{flex-direction:column;align-items:flex-start}
+  .slider{width:100%;text-align:left}
+  .s-bento,.s-prod,.s-foot{padding-top:80px}
+  .bento-shell,.prod-shell{padding:48px 14px 14px;border-radius:24px 24px 0 0}
+  .bento-shell{border-radius:24px}
+  .prod-shell{padding-bottom:0}
+  .bento{grid-template-columns:1fr}
+  .c-big{grid-column:auto;min-height:460px;padding:22px}
+  .stage{grid-template-columns:1fr}
+  .hand{grid-column:auto;height:420px}
+  .menu-full{padding:56px 18px 40px;border-radius:0 0 24px 24px}
+  .menu-grid{grid-template-columns:1fr;gap:0}
+  .cta{padding:28px 20px;min-height:auto;border-radius:24px;padding-top:120px}
+  .cta::before{background:linear-gradient(180deg,rgba(20,10,8,.25) 0%,rgba(20,10,8,.75) 40%,rgba(20,10,8,.92) 100%)}
+  .foot-grid{grid-template-columns:1fr 1fr}
+  .foot .about{grid-column:span 2}
+  .foot .mark{display:none}
+  .legal{flex-direction:column;align-items:center;gap:6px;margin-top:40px;text-align:center}
+}
+</style>
+</head>
+<body>
+
+<header class="nav" id="nav">
+  <div class="wrap">
+    <nav class="nav-l" aria-label="Secciones">
+      <a class="pill" href="#carta">La carta</a>
+      <a class="pill" href="#el-bar">El bar</a>
+      <a class="pill" href="#visitanos">Horario</a>
+    </nav>
+    <a class="logo" href="#top" aria-label="LaKeDada Bar, inicio">
+      <span class="wordmark">La<span class="k">K</span>e<span class="d">D</span>ada</span>
+    </a>
+    <div class="nav-r">
+      <span class="status status-nav" data-status><i></i><span>Consultando horario…</span></span>
+      <a class="btn-dark btn-red" href="https://ig.me/m/bar.lakedada" target="_blank" rel="noopener">Reservar</a>
+      <button class="burger" id="burger" aria-label="Abrir menú"><i></i><i></i></button>
+    </div>
+  </div>
+</header>
+<nav class="mmenu" id="mmenu" aria-label="Menú móvil">
+  <a href="#carta">La carta</a>
+  <a href="#el-bar">El bar</a>
+  <a href="#visitanos">Horario</a>
+  <a class="script" href="https://ig.me/m/bar.lakedada" target="_blank" rel="noopener">Reservar mesa</a>
+</nav>
+
+<main id="top">
+<!-- ============ HERO ============ -->
+<section class="hero">
+  <div class="wrap">
+    <div class="hero-head">
+      <h1 class="h-display split" data-split style="--base:150ms">Más que una tapa,<br><span class="red">un punto de encuentro</span></h1>
+      <p class="hero-sub rv" style="--base:700ms">Tapas de las de siempre, vermut y buena compañía en la <b>Plaza de la Tercia, 3</b> · Mota del Cuervo</p>
+    </div>
+
+    <div class="hero-card rv rv-scale" style="--base:850ms">
+      <img class="media kb" src="img/copas.jpg" alt="Dos copas sobre una mesa de mármol con la barra iluminada al fondo">
+      <div class="shade"></div>
+      <p class="hero-tag" aria-hidden="true">Aquí las tapas <span>saben mejor</span></p>
+
+      <div class="studio" id="studio" aria-label="Ejemplo de reserva por mensaje directo de Instagram">
+        <div class="chat">
+          <div class="chat-top msg"><span class="av"><b>K</b></span>bar.lakedada <em>Así se reserva</em></div>
+          <div class="bubble msg">¡Hola! ¿Tenéis mesa el sábado a las 21:30? Somos seis.</div>
+          <div class="ai msg"><span class="ai-ic"><b>K</b></span><div class="ai-t" data-text="¡Hola! Claro, os guardamos una de las mesas con más encanto. ¿A nombre de quién la apuntamos?"></div></div>
+          <div class="bubble msg">De Marta. Y guardadnos chuletitas, que vamos con hambre.</div>
+          <div class="ai msg"><span class="ai-ic"><b>K</b></span><div class="ai-t" data-text="Apuntado: sábado, 21:30, seis personas. Las chuletitas salen recién hechas. ¡Aquí empieza la KeDada!"></div></div>
+          <div class="cd msg">
+            <div><small>Tu plan del sábado</small><strong>Tapeo y sobremesa larga</strong></div>
+            <div class="slider"><small>Ganas de quedarse</small><div class="track"><b id="hero-track"></b></div></div>
+          </div>
+        </div>
+        <div class="prod">
+          <span class="msg">Lo que sale de cocina</span>
+          <figure id="hero-fig" class="msg">
+            <img src="img/chuletitas.jpg" alt="Chuletitas de cordero lechal con patatas fritas y pimientos de Padrón">
+            <figcaption>Chuletitas de cordero lechal <b>21,90 €</b></figcaption>
+          </figure>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ EL BAR ============ -->
+<section class="s-bento" id="el-bar">
+  <div class="wrap">
+    <div class="bento-shell">
+      <div class="sec-head">
+        <span class="eyebrow rv">Abierto desde el 11 de octubre</span>
+        <h2 class="h2 split" data-split>Tapas de las de siempre,<br><span class="lt">gente con la que quedarse</span></h2>
+        <p class="lead rv" style="--d:3">Después de 14 años en la hostelería, Kevin se pone al frente de su propio bar, con Zahira a su lado. Un sitio para decir «quedamos allí» y no tener que explicar nada más.</p>
+      </div>
+
+      <div class="bento">
+        <article class="card c-big rv" style="--d:1">
+          <img src="img/reservas.jpg" alt="El salón de LaKeDada con luces cálidas y las mesas preparadas" loading="lazy">
+          <div>
+            <h3>Así es LaKeDada<br><span>cuando nadie mira.</span></h3>
+            <p class="desc">Luces cálidas, mesas listas y el ambiente ya puesto. Solo falta que llegues tú.</p>
+          </div>
+          <div>
+            <div class="avatars">
+              <span class="row-av"><img src="img/tosta-jamon.jpg" alt=""><img src="img/chipirones.jpg" alt=""><img src="img/paella.jpg" alt=""></span>
+              Pide mesa por mensaje directo
+            </div>
+            <a class="btn-white" href="https://ig.me/m/bar.lakedada" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg>
+              Reserva por Instagram
+            </a>
+          </div>
+        </article>
+
+        <article class="card c-pad rv" style="--d:2">
+          <div class="collage">
+            <img src="img/matrimonio.jpg" alt="Tosta de matrimonio de boquerón y anchoa con rodajas de tomate" loading="lazy">
+            <img src="img/tosta-jamon.jpg" alt="Tosta de jamón cortado a cuchillo con tomate" loading="lazy">
+          </div>
+          <div class="txt"><h4>Tapeo de verdad</h4><p>Matrimonio de boquerón y anchoa, jamón cortado a cuchillo y montados que se vuelven costumbre.</p></div>
+        </article>
+
+        <article class="card c-pad rv" id="gauge-card" style="--d:3">
+          <div class="gauge">
+            <svg viewBox="0 0 180 100" style="width:180px;height:110px;overflow:visible" aria-hidden="true">
+              <defs><linearGradient id="gg" x1="0" x2="1"><stop offset="0" stop-color="#e8b48a"/><stop offset="1" stop-color="#c8102e"/></linearGradient></defs>
+              <path d="M10 95 A80 80 0 0 1 170 95" fill="none" stroke="rgba(31,21,18,.1)" stroke-width="12" stroke-linecap="round"/>
+              <path id="g-arc" d="M10 95 A80 80 0 0 1 170 95" fill="none" stroke="url(#gg)" stroke-width="12" stroke-linecap="round" stroke-dasharray="252" stroke-dashoffset="252" style="transition:stroke-dashoffset 2.2s cubic-bezier(.22,1,.36,1)"/>
+            </svg>
+            <div class="val"><span data-count="14">0</span><small>años</small></div>
+            <div class="ends"><span>Primera barra</span><span>Su propio bar</span></div>
+          </div>
+          <div class="txt"><h4>Toda una vida tras la barra</h4><p>Kevin lleva 14 años en hostelería. LaKeDada es el sueño que llevaba tiempo imaginando.</p></div>
+        </article>
+
+        <article class="card c-pad rv" style="--d:4">
+          <div class="rows">
+            <div class="row" style="--i:0"><img src="img/paella.jpg" alt=""><div><b>Domingo de paella</b><em>Desde las 13:00 · hasta agotar</em></div><span class="ok"><svg viewBox="0 0 12 12" fill="none" stroke="#fff" stroke-width="2"><path d="M2.5 6.5l2.2 2.2 4.8-5"/></svg></span></div>
+            <div class="row" style="--i:1"><img src="img/flamenquin.jpg" alt=""><div><b>Aperitivo de la casa</b><em>De cortesía con tu consumición</em></div><span class="ok"><svg viewBox="0 0 12 12" fill="none" stroke="#fff" stroke-width="2"><path d="M2.5 6.5l2.2 2.2 4.8-5"/></svg></span></div>
+            <div class="row" style="--i:2"><img src="img/tortilla.jpg" alt=""><div><b>Tortilla entera</b><em>Por encargo · con barra de pan</em></div><span class="ok"><svg viewBox="0 0 12 12" fill="none" stroke="#fff" stroke-width="2"><path d="M2.5 6.5l2.2 2.2 4.8-5"/></svg></span></div>
+          </div>
+          <div class="txt"><h4>Los planes de la semana</h4><p>Hay cosas que no fallan: la paella del domingo, el aperitivo con la caña y la tortilla que se deshace sola.</p></div>
+        </article>
+
+        <article class="card c-pad rv" style="--d:5">
+          <div class="insight">
+            <img src="img/aperitivo-paella.jpg" alt="Dos cañas bien tiradas junto a un plato de paella" loading="lazy">
+            <span class="chip"><i></i>Cañas bien frías</span>
+          </div>
+          <div class="txt"><h4>La primera copa se pide</h4><p>La segunda ya es decisión propia. Y en LaKeDada casi nadie se queda en una.</p></div>
+        </article>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CARTA ============ -->
+<section class="s-prod" id="carta">
+  <div class="wrap">
+    <div class="prod-shell">
+      <div class="sec-head">
+        <span class="eyebrow rv">La carta</span>
+        <h2 class="h2 split" data-split>Hay cartas que se leen.<br><span class="lt">La nuestra te hace dudar.</span></h2>
+        <p class="lead rv" style="--d:3">Jamón ibérico de bellota cortado a cuchillo, chuletitas de cordero lechal, calamares, tostas y montados. Mejor ven con hambre.</p>
+      </div>
+
+      <div class="stage" id="stage">
+        <div class="col">
+          <div class="g-card rv" style="--d:1">
+            <span class="lbl">Los que más se piden</span>
+            <div class="thumbs">
+              <img src="img/chipirones.jpg" alt="Chipirones a la plancha" loading="lazy">
+              <img src="img/champinones.jpg" alt="Champiñones al ajillo" loading="lazy">
+              <img src="img/tortilla.jpg" alt="Tortilla de patata" loading="lazy">
+            </div>
+            <div class="g-foot">Más de 40 platos para compartir <a href="#carta-completa" aria-label="Ver la carta completa"><svg viewBox="0 0 12 12" fill="none" stroke="#fff" stroke-width="1.8"><path d="M2 6h8M6.5 2.5L10 6l-3.5 3.5"/></svg></a></div>
+          </div>
+          <div class="g-card build rv" style="--d:2">
+            <span class="lbl">Calientes del mar</span>
+            <h5 style="margin-top:4px">Sabor de mar, tierra adentro</h5>
+            <ul>
+              <li><span>Calamares a la andaluza</span><b>12,90 €</b></li>
+              <li><span>Chipirones a la plancha</span><b>13,20 €</b></li>
+              <li><span>Gamba blanca a la plancha</span><b>27,70 €</b></li>
+              <li><span>Delicias de merluza</span><b>11,90 €</b></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="hand rv" style="--d:2">
+          <img id="hand-img" src="img/vermut.jpg" alt="Copa de vermut con hielo y piel de naranja con el logo de LaKeDada">
+        </div>
+
+        <div class="col">
+          <div class="g-card rv" style="--d:3">
+            <span class="lbl">La especialidad</span>
+            <div class="hero-vis">
+              <img src="img/chuletitas.jpg" alt="Chuletitas de cordero lechal" loading="lazy">
+              <div>
+                <h5>Chuletitas de cordero lechal</h5>
+                <em>21,90 €</em>
+                <ul class="checks"><li>Con patatas fritas</li><li>Pimientos de Padrón</li><li>Para compartir, o no</li></ul>
+              </div>
+            </div>
+            <a class="view" href="#carta-completa">Ver la carta completa <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M2 7h10M8 3l4 4-4 4"/></svg></a>
+          </div>
+          <div class="g-card rv" style="--d:4" id="match-card">
+            <span class="lbl">Entrantes fríos</span>
+            <h5 style="margin-top:4px">Jamón ibérico de bellota</h5>
+            <em style="display:block;margin-top:2px">Etiqueta negra · cortado a cuchillo · 21,50 €</em>
+            <div class="match-row">
+              <div class="ring">
+                <svg viewBox="0 0 62 62" style="transform:rotate(-90deg);width:100%;height:100%" aria-hidden="true">
+                  <circle cx="31" cy="31" r="26" fill="none" stroke="rgba(31,21,18,.08)" stroke-width="6"/>
+                  <circle id="ring-arc" cx="31" cy="31" r="26" fill="none" stroke="#c8102e" stroke-width="6" stroke-linecap="round" stroke-dasharray="163.4" stroke-dashoffset="163.4" style="transition:stroke-dashoffset 2s cubic-bezier(.22,1,.36,1) .3s"/>
+                </svg>
+                <span><b data-count="100" style="font-weight:400">0</b>%</span>
+              </div>
+              <img src="img/tosta-jamon.jpg" alt="Jamón ibérico cortado a cuchillo" loading="lazy">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="menu-full" id="carta-completa">
+      <div class="menu-head">
+        <h3 class="rv">Carta completa <span class="script">para picar</span></h3>
+        <p class="rv" style="--d:1">Si tienes alguna alergia o intolerancia, pregúntanos y te contamos qué lleva cada plato.</p>
+      </div>
+      <div class="tabs rv" style="--d:2" role="tablist" aria-label="Filtrar la carta">
+        <button class="tab" role="tab" aria-selected="true" data-f="all">Todo</button>
+        <button class="tab" role="tab" aria-selected="false" data-f="frio">Fríos</button>
+        <button class="tab" role="tab" aria-selected="false" data-f="caliente">Calientes</button>
+        <button class="tab" role="tab" aria-selected="false" data-f="pan">Tostas y bocados</button>
+        <button class="tab" role="tab" aria-selected="false" data-f="postre">Postres</button>
+      </div>
+
+      <div class="menu-grid">
+        <div class="mcat rv" data-c="frio">
+          <h4>Entrantes fríos</h4>
+          <ul>
+            <li><span class="n">Jamón ibérico 100% bellota<small>Etiqueta negra · cortado a cuchillo</small></span><span class="dots"></span><span class="p">21,50 €</span></li>
+            <li><span class="n">Queso manchego D.O.</span><span class="dots"></span><span class="p">9,50 €</span></li>
+            <li><span class="n">Chorizo ibérico</span><span class="dots"></span><span class="p">7,70 €</span></li>
+            <li><span class="n">Boquerones en vinagre</span><span class="dots"></span><span class="p">13,00 €</span></li>
+            <li><span class="n">Ensaladilla rusa</span><span class="dots"></span><span class="p">9,70 €</span></li>
+            <li><span class="n">Cecina de buey</span><span class="dots"></span><span class="p">17,90 €</span></li>
+            <li><span class="n">Tomate aliñado</span><span class="dots"></span><span class="p">9,10 €</span></li>
+            <li><span class="n">Tomate aliñado con ventresca</span><span class="dots"></span><span class="p">13,80 €</span></li>
+          </ul>
+        </div>
+        <div class="mcat rv" data-c="caliente" style="--d:1">
+          <h4>Calientes del campo</h4>
+          <ul>
+            <li><span class="n">Tortilla de patata entera + barra de pan<small>Por encargo</small></span><span class="dots"></span><span class="p">26,00 €</span></li>
+            <li><span class="n">Pincho de tortilla</span><span class="dots"></span><span class="p">4,50 €</span></li>
+            <li><span class="n">Champiñones al ajillo</span><span class="dots"></span><span class="p">6,50 €</span></li>
+            <li><span class="n">Espárragos trigueros a la plancha</span><span class="dots"></span><span class="p">7,90 €</span></li>
+            <li><span class="n">Berenjenas fritas con miel</span><span class="dots"></span><span class="p">9,90 €</span></li>
+          </ul>
+        </div>
+        <div class="mcat rv" data-c="caliente" style="--d:2">
+          <h4>Calientes del mar</h4>
+          <ul>
+            <li><span class="n">Calamares a la andaluza</span><span class="dots"></span><span class="p">12,90 €</span></li>
+            <li><span class="n">Chipirones a la plancha</span><span class="dots"></span><span class="p">13,20 €</span></li>
+            <li><span class="n">Gamba blanca a la plancha</span><span class="dots"></span><span class="p">27,70 €</span></li>
+            <li><span class="n">Delicias de merluza<small>Con menestra de verdura</small></span><span class="dots"></span><span class="p">11,90 €</span></li>
+          </ul>
+        </div>
+        <div class="mcat rv" data-c="caliente">
+          <h4>Calientes de carne</h4>
+          <ul>
+            <li><span class="n">Callos de cordero a la madrileña<small>Según existencias</small></span><span class="dots"></span><span class="p">11,50 €</span></li>
+            <li><span class="n">Albóndigas en salsa</span><span class="dots"></span><span class="p">12,90 €</span></li>
+            <li><span class="n">Alitas de pollo fritas con limón (6 uds.)</span><span class="dots"></span><span class="p">10,30 €</span></li>
+            <li><span class="n">Empanadillas caseras (unidad)</span><span class="dots"></span><span class="p">3,50 €</span></li>
+            <li><span class="n">Chuletitas de cordero lechal<small>Con patatas fritas y pimientos de Padrón</small></span><span class="dots"></span><span class="p">21,90 €</span></li>
+          </ul>
+        </div>
+        <div class="mcat rv" data-c="pan" style="--d:1">
+          <h4>Tostas</h4>
+          <ul>
+            <li><span class="n">Matrimonio con rodajas de tomate</span><span class="dots"></span><span class="p">8,50 €</span></li>
+            <li><span class="n">Jamón con rodajas de tomate</span><span class="dots"></span><span class="p">6,90 €</span></li>
+            <li><span class="n">Queso con miel</span><span class="dots"></span><span class="p">6,90 €</span></li>
+          </ul>
+          <h4 style="margin-top:26px">Sándwiches</h4>
+          <ul>
+            <li><span class="n">Mixto</span><span class="dots"></span><span class="p">4,50 €</span></li>
+            <li><span class="n">Mixto con huevo</span><span class="dots"></span><span class="p">5,50 €</span></li>
+            <li><span class="n">Vegetal</span><span class="dots"></span><span class="p">5,90 €</span></li>
+          </ul>
+        </div>
+        <div class="mcat rv" data-c="pan" style="--d:2">
+          <h4>Montados</h4>
+          <ul>
+            <li><span class="n">Chistorra al horno con pimiento verde</span><span class="dots"></span><span class="p">4,50 €</span></li>
+            <li><span class="n">Sobrasada con miel</span><span class="dots"></span><span class="p">4,70 €</span></li>
+            <li><span class="n">Atún con ensalada de pimiento de piquillo</span><span class="dots"></span><span class="p">4,90 €</span></li>
+            <li><span class="n">Lomo</span><span class="dots"></span><span class="p">4,50 €</span></li>
+            <li><span class="n">Bacon</span><span class="dots"></span><span class="p">4,50 €</span></li>
+          </ul>
+        </div>
+        <div class="mcat rv" data-c="postre">
+          <h4>Postres <span class="script">un final dulce</span></h4>
+          <ul>
+            <li><span class="n">Copa de yogur con 6 toppings</span><span class="dots"></span><span class="p">6,90 €</span></li>
+            <li><span class="n">Postres individuales</span><span class="dots"></span><span class="p">7,10 €</span></li>
+          </ul>
+          <p class="sub">Manzana de feria rellena de crema de queso · Mandarina cheesecake · Tres chocolates</p>
+        </div>
+      </div>
+      <p class="supl rv"><b>Suplementos</b><span>Queso, tomate o pimiento +0,50 €</span><span>Atún, huevo o bacon +1,50 €</span><span>Bollo de pan +1,50 €</span></p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ VISÍTANOS ============ -->
+<section class="s-foot" id="visitanos">
+  <div class="wrap">
+    <div class="cta rv rv-scale">
+      <img class="media kb" src="img/local.jpg" alt="" loading="lazy">
+      <div>
+        <h2 class="split" data-split>¿Que<br>damos? <span class="script">te esperamos</span></h2>
+        <p class="rv" style="--d:2">Plaza de la Tercia, 3 · Mota del Cuervo. Escríbenos por Instagram con el día, la hora y cuántos sois, y te guardamos la mesa.</p>
+        <div class="acts rv" style="--d:3">
+          <a class="btn-dark btn-red" href="https://ig.me/m/bar.lakedada" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg>
+            Reservar mesa
+          </a>
+          <a class="btn-ghost" href="https://www.google.com/maps/search/?api=1&query=Plaza+de+la+Tercia+3+Mota+del+Cuervo" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg>
+            Cómo llegar
+          </a>
+        </div>
+      </div>
+      <div class="hours rv" style="--d:3" id="horario">
+        <div class="hours-top"><h3>Horario</h3><span class="status" data-status><i></i><span></span></span></div>
+        <ul id="hours-list">
+          <li data-day="1"><span>Lunes</span><span>16:00 – 00:00</span></li>
+          <li data-day="2"><span>Martes</span><span>16:00 – 00:00</span></li>
+          <li data-day="3" class="off"><span>Miércoles</span><span>Cerrado</span></li>
+          <li data-day="4"><span>Jueves</span><span>16:00 – 00:00</span></li>
+          <li data-day="5"><span>Viernes</span><span>16:00 – 01:30</span></li>
+          <li data-day="6"><span>Sábado</span><span>12:00 – 01:30</span></li>
+          <li data-day="0"><span>Domingo</span><span>12:00 – 00:00</span></li>
+        </ul>
+        <p class="fest">Festivos de 12:00 a 18:00.</p>
+      </div>
+    </div>
+
+    <footer class="foot">
+      <div class="foot-grid">
+        <div class="about rv">
+          <h6>LaKeDada Bar</h6>
+          <p>Más que una tapa, un punto de encuentro. Tapas de las de siempre, vermut y una barra donde siempre pasan cosas buenas.</p>
+          <div class="socials">
+            <a href="https://www.instagram.com/bar.lakedada/" target="_blank" rel="noopener" aria-label="Instagram de LaKeDada"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg></a>
+            <a href="https://www.google.com/maps/search/?api=1&query=Plaza+de+la+Tercia+3+Mota+del+Cuervo" target="_blank" rel="noopener" aria-label="Ver en el mapa"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg></a>
+          </div>
+        </div>
+        <div class="rv" style="--d:1">
+          <h6>Visítanos</h6>
+          <ul><li>Plaza de la Tercia, 3</li><li>16630 Mota del Cuervo</li><li>Cuenca</li></ul>
+        </div>
+        <div class="rv" style="--d:2">
+          <h6>La casa</h6>
+          <ul><li><a href="#carta-completa">La carta</a></li><li><a href="#el-bar">El bar</a></li><li><a href="#horario">Horario</a></li></ul>
+        </div>
+        <div class="rv" style="--d:3">
+          <h6>Reservas</h6>
+          <ul><li><a href="https://ig.me/m/bar.lakedada" target="_blank" rel="noopener">Mensaje directo</a></li><li><a href="https://www.instagram.com/bar.lakedada/" target="_blank" rel="noopener">@bar.lakedada</a></li></ul>
+        </div>
+        <div class="mark rv" style="--d:4"><span class="wordmark">La<span class="k">K</span>e<span class="d">D</span>ada</span></div>
+      </div>
+      <div class="legal"><span>Tapas · Buena compañía · Siempre un buen plan</span><span>© 2026 LaKeDada Bar · Mota del Cuervo</span></div>
+    </footer>
+  </div>
+</section>
+</main>
+
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
+<script>
+document.documentElement.classList.add('js');
+
+(() => {
+  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const wait = ms => new Promise(r => setTimeout(r, ms));
+
+  // split headings into words
+  document.querySelectorAll('[data-split]').forEach(el => {
+    let i = 0;
+    const walk = node => {
+      [...node.childNodes].forEach(n => {
+        if (n.nodeType === 3) {
+          const frag = document.createDocumentFragment();
+          n.textContent.split(/(\s+)/).forEach(part => {
+            if (!part) return;
+            if (/^\s+$/.test(part)) { frag.appendChild(document.createTextNode(' ')); return; }
+            const w = document.createElement('span'); w.className = 'w';
+            const s = document.createElement('span'); s.textContent = part; s.style.setProperty('--i', i++);
+            w.appendChild(s); frag.appendChild(w);
+          });
+          n.replaceWith(frag);
+        } else if (n.nodeType === 1 && n.tagName !== 'BR') walk(n);
+      });
+    };
+    walk(el);
+  });
+
+  // count-up
+  const countUp = el => {
+    const end = +el.dataset.count, t0 = performance.now(), dur = reduce ? 1 : 2000;
+    const tick = t => {
+      const p = Math.min(1, (t - t0) / dur);
+      el.textContent = Math.round(end * (1 - Math.pow(1 - p, 4)));
+      if (p < 1) requestAnimationFrame(tick);
+    };
+    requestAnimationFrame(tick);
+  };
+
+  // reveal on scroll
+  const reveal = el => {
+    if (el.classList.contains('in')) return;
+    el.classList.add('in');
+    el.querySelectorAll('[data-count]').forEach(countUp);
+    if (el.id === 'gauge-card') document.getElementById('g-arc').style.strokeDashoffset = 0;
+    if (el.id === 'match-card') document.getElementById('ring-arc').style.strokeDashoffset = 0;
+  };
+  const targets = document.querySelectorAll('.rv,[data-split]');
+  const io = new IntersectionObserver(entries => entries.forEach(e => {
+    if (e.isIntersecting) { reveal(e.target); io.unobserve(e.target); }
+  }), { threshold: 0.08, rootMargin: '0px 0px -6% 0px' });
+  targets.forEach(el => io.observe(el));
+  const sweep = () => targets.forEach(el => {
+    const r = el.getBoundingClientRect();
+    if (r.top < innerHeight * 0.94 && r.bottom > 0) reveal(el);
+  });
+  requestAnimationFrame(() => requestAnimationFrame(sweep));
+  addEventListener('load', sweep);
+
+  // hero chat: reserve final heights, then run both columns together
+  document.querySelectorAll('#studio .ai-t').forEach(el => {
+    el.innerHTML = '<span class="ghost"></span><span class="live"></span>';
+    el.firstChild.textContent = el.dataset.text;
+  });
+  const typeInto = (el, text, speed = 16) => new Promise(res => {
+    const live = el.querySelector('.live');
+    if (reduce) { live.textContent = text; return res(); }
+    live.innerHTML = '<span class="typing"><i></i><i></i><i></i></span>';
+    setTimeout(() => {
+      live.textContent = ''; let k = 0;
+      const step = () => { k += 2; live.textContent = text.slice(0, k); k < text.length ? setTimeout(step, speed) : res(); };
+      step();
+    }, 750);
+  });
+  const runColumn = async (items, done) => {
+    await wait(reduce ? 0 : 1500);
+    for (const m of items) {
+      m.classList.add('show');
+      if (m.id === 'hero-fig') m.classList.add('in');
+      const t = m.querySelector('.ai-t');
+      if (t) await typeInto(t, t.dataset.text);
+      else await wait(reduce ? 0 : 420);
+    }
+    if (done) done();
+  };
+  runColumn([...document.querySelectorAll('#studio .chat .msg')], () => {
+    document.getElementById('hero-track').style.width = '92%';
+  });
+  runColumn([...document.querySelectorAll('#studio .prod .msg')]);
+
+  // open / closed status (Europe/Madrid)
+  const SCHED = { 0:[12,24], 1:[16,24], 2:[16,24], 3:null, 4:[16,24], 5:[16,25.5], 6:[12,25.5] };
+  const DAYS = ['domingo','lunes','martes','miércoles','jueves','viernes','sábado'];
+  const fmt = h => { h = h % 24; const H = Math.floor(h), M = Math.round((h - H) * 60); return String(H).padStart(2,'0') + ':' + String(M).padStart(2,'0'); };
+  const madrid = () => {
+    const p = new Intl.DateTimeFormat('en-GB', { timeZone:'Europe/Madrid', weekday:'short', hour:'2-digit', minute:'2-digit', hour12:false }).formatToParts(new Date());
+    const g = t => p.find(x => x.type === t).value;
+    const wd = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'].indexOf(g('weekday'));
+    return { wd, h: (+g('hour') % 24) + (+g('minute')) / 60 };
+  };
+  const status = () => {
+    const { wd, h } = madrid();
+    const prev = (wd + 6) % 7, ps = SCHED[prev], s = SCHED[wd];
+    let open = false, closeAt = null;
+    if (ps && ps[1] > 24 && h < ps[1] - 24) { open = true; closeAt = ps[1]; }
+    else if (s && h >= s[0] && h < s[1]) { open = true; closeAt = s[1]; }
+    let text;
+    if (open) text = 'Abierto · cierra a las ' + fmt(closeAt);
+    else {
+      if (s && h < s[0]) text = 'Cerrado · abre hoy a las ' + fmt(s[0]);
+      else {
+        let d = 1; while (!SCHED[(wd + d) % 7]) d++;
+        const nd = (wd + d) % 7;
+        text = 'Cerrado · abre ' + (d === 1 ? 'mañana' : 'el ' + DAYS[nd]) + ' a las ' + fmt(SCHED[nd][0]);
+      }
+    }
+    document.querySelectorAll('[data-status]').forEach(el => { el.classList.toggle('open', open); el.lastElementChild.textContent = text; });
+    const today = document.querySelector('#hours-list li[data-day="' + wd + '"]');
+    document.querySelectorAll('#hours-list li').forEach(li => li.classList.remove('today'));
+    if (today) today.classList.add('today');
+  };
+  status(); setInterval(status, 60000);
+
+  // menu filter
+  const tabs = document.querySelectorAll('.tab');
+  tabs.forEach(t => t.addEventListener('click', () => {
+    tabs.forEach(x => x.setAttribute('aria-selected', x === t));
+    const f = t.dataset.f;
+    document.querySelectorAll('.mcat').forEach(c => {
+      c.classList.toggle('hide', f !== 'all' && c.dataset.c !== f);
+      c.classList.add('in');
+    });
+  }));
+
+  // smooth scroll, nav state, parallax
+  const nav = document.getElementById('nav');
+  const hand = document.getElementById('hand-img');
+  const stage = document.getElementById('stage');
+  const onScroll = () => {
+    nav.classList.toggle('scrolled', scrollY > 20);
+    if (!reduce && hand && stage) {
+      const r = stage.getBoundingClientRect();
+      const p = Math.min(1, Math.max(0, (innerHeight - r.top) / (innerHeight + r.height)));
+      hand.style.transform = 'translate3d(0,' + (-p * 12).toFixed(2) + '%,0)';
+    }
+  };
+  let lenis = null;
+  if (!reduce && window.Lenis) {
+    lenis = new Lenis({ duration: 1.25, easing: t => Math.min(1, 1.001 - Math.pow(2, -10 * t)), smoothWheel: true });
+    lenis.on('scroll', onScroll);
+    const raf = t => { lenis.raf(t); requestAnimationFrame(raf); };
+    requestAnimationFrame(raf);
+  } else {
+    let ticking = false;
+    addEventListener('scroll', () => {
+      if (!ticking) { requestAnimationFrame(() => { onScroll(); ticking = false; }); ticking = true; }
+    }, { passive: true });
+  }
+  onScroll();
+
+  document.querySelectorAll('a[href^="#"]').forEach(a => a.addEventListener('click', e => {
+    const id = a.getAttribute('href');
+    document.body.classList.remove('menu-open');
+    if (id.length < 2) return;
+    const target = document.querySelector(id);
+    if (!target) return;
+    e.preventDefault();
+    if (lenis) lenis.scrollTo(target, { offset: -70 });
+    else target.scrollIntoView({ behavior: 'smooth' });
+  }));
+  document.getElementById('burger').addEventListener('click', () => document.body.classList.toggle('menu-open'));
+})();
+</script>
+</body>
+</html>
